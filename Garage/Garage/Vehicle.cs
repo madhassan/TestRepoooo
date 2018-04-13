@@ -8,14 +8,14 @@ namespace Garage
 {
     public class Vehicle
     {
-        public Vehicle(int registrationNo, string color, int numberOfwheels)
+        public Vehicle(string registrationNo, string color, int numberOfwheels)
         {
             RegistrationNumber = registrationNo;
             Color = color;
             NumberofWheels = numberOfwheels;
         }
 
-        public int RegistrationNumber { get; set; }
+        public string RegistrationNumber { get; set; }
         public string Color { get; set; }
         public int NumberofWheels { get; set; }
     }

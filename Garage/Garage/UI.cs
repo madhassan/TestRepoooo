@@ -55,7 +55,7 @@ namespace Garage
                 }
             } while (true);
 
-            GarageClass<Vehicle> garageClass = new GarageClass<Vehicle>(cap);
+            Garage<Vehicle> garageClass = new Garage<Vehicle>(cap);
 
 
             bool Keeprunning = true;

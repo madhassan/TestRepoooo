@@ -8,7 +8,7 @@ namespace Garage
 {
     public class Airplane : Vehicle
     {
-        public Airplane(int registrationNo,string color,int nOofwheels,int numberOfengines) : base(registrationNo,color,nOofwheels)
+        public Airplane(string registrationNo,string color,int nOofwheels,int numberOfengines) : base(registrationNo,color,nOofwheels)
         {
             NumberOfEngines = numberOfengines;
         }

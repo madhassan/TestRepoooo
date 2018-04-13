@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace Garage
 {
-    public class GarageClass<T> : IEnumerable<T> where T : Vehicle
+    public class Garage<T> : IEnumerable<T> where T : Vehicle
     {
         T[] vehicles;
 
         int cap, count;
-        public GarageClass(int capacity)
+        public Garage(int capacity)
         {
             cap = capacity;
             count = 0;
             vehicles = new T[capacity];
         }
 
-        public void Leave(T input)
+        public void Add(T input)
         {
             if (cap > count)
             {
