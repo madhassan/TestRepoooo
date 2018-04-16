@@ -12,6 +12,16 @@ namespace Garage
         {
             Length = length;
         }
+
+        //public override string Properties()
+        //{
+        //    return base.Properties() + "Length " + Length;
+        //}
+        public override string ToString()
+        {
+            return base.ToString() + "Length " + Length;
+        }
+
         public int Length { get; set; }
     }
 }

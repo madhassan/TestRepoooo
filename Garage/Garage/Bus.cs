@@ -13,5 +13,10 @@ namespace Garage
             NumberOfSeats = noOfseats;
         }
         public int NumberOfSeats { get; set; }
+        
+        public override string ToString()
+        {
+            return base.ToString() + "Number of Seats " + NumberOfSeats;
+        }
     }
 }

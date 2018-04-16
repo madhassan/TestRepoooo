@@ -13,5 +13,10 @@ namespace Garage
             CylinderVolume = cylinderVolume;
         }
         public float CylinderVolume { get; set; }
+        
+        public override string ToString()
+        {
+            return base.ToString() + "Cylinder Volume " + CylinderVolume;
+        }
     }
 }

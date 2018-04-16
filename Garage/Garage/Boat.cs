@@ -13,5 +13,10 @@ namespace Garage
             FuelType = fuelType;
         }
         public string FuelType { get; set; }
+        
+        public override string ToString()
+        {
+            return base.ToString() + "Fuel Type " + FuelType;
+        }
     }
 }
