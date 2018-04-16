@@ -11,7 +11,7 @@ namespace Garage
 
        
         //public bool Park(Vehicle vehicle) {
-        //    //
+        
         //}
 
         public Vehicle Retrieve(string regNo) {
@@ -28,16 +28,10 @@ namespace Garage
             return null;
         }
 
-        public Vehicle CreateVehicle(string registrationNo, string color, int numberOfwheels)
-        {
-            Vehicle vehicle = new Vehicle(registrationNo, color, numberOfwheels);
-            vehicle.RegistrationNumber = registrationNo;
-            vehicle.Color = color;
-            vehicle.NumberofWheels = numberOfwheels;
-
-
-            return vehicle;
-        }
+        //public Garage<Vehicle> ParkVehicle(int cap)
+        //{
+           
+        //}
         public void SetRegistrationNumber(Vehicle vehicle, string registrationNo)
         {
             vehicle.RegistrationNumber = registrationNo;
