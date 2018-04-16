@@ -23,7 +23,7 @@ namespace Garage
         public override string ToString()
         {
             Type type = GetType();
-            return type.Name.ToString() + $"Registration number: {RegistrationNumber} Color: {Color} Number of wheels: {NumberofWheels} ";
+            return type.Name.ToString() + $" - Registration number: {RegistrationNumber} Color: {Color} Number of wheels: {NumberofWheels} ";
         }
     }
 

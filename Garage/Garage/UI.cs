@@ -75,35 +75,19 @@ namespace Garage
                 Console.WriteLine("3) Bus");
                 Console.WriteLine("4) Motorcycle");
                 Console.WriteLine("5) Airplane");
-                Console.WriteLine("6) Remove a vehicle");
+                Console.WriteLine("6) Moped");
                 Console.WriteLine("7) Check parked vehicles");
+                Console.WriteLine("8) Remove a vehicle");
                 Console.WriteLine("0) Quit");
 
-                string Input = Console.ReadLine();                                  //ReadKey().KeyChar
-                    string registrationNo, color;
-                    int nOfWheels,length, noOfSeats, numberOfengines;
+                string Input = Console.ReadLine();  
+                    int length, noOfSeats, numberOfengines,padels;
                      string fuelType;
-                     bool endLoop=true, endLoop2 = true;
+                     bool  endLoop2 = true;
                      float cylinderVolume;
                 if (Input == "1")
                 {
-                    Console.WriteLine("Enter the registration number:");
-                    registrationNo = Console.ReadLine();
-                    Console.WriteLine("Enter the color:");
-                    color = Console.ReadLine();
-                    Console.WriteLine("Enter the number of wheels:");
-                    do
-                    {
-                        bool input = int.TryParse(Console.ReadLine(), out nOfWheels);
-                        if (input == true)
-                        {
-                            endLoop = false;
-                        }
-                        else
-                        {
-                            Console.WriteLine("You should input the number numerically");
-                        }
-                    } while (endLoop);
+                    VehicleProperties();
                     Console.WriteLine("Enter the cylinder volume:");
                     do
                     {
@@ -118,52 +102,19 @@ namespace Garage
                         }
                     } while (endLoop2);
 
-                    garage.Add(new Car(registrationNo, color, nOfWheels, cylinderVolume));
+                    garage.Add(new Car(RegistrationNumber, Color, NOfWheels, cylinderVolume));
                 }
                 else if (Input == "2")
                 {
-
-                    Console.WriteLine("Enter the registration number:");
-                    registrationNo = Console.ReadLine();
-                    Console.WriteLine("Enter the color:");
-                    color = Console.ReadLine();
-                    Console.WriteLine("Enter the number of wheels:");
-                    do
-                    {
-                        bool input = int.TryParse(Console.ReadLine(), out nOfWheels);
-                        if (input == true)
-                        {
-                            endLoop = false;
-                        }
-                        else
-                        {
-                            Console.WriteLine("You should input the number numerically");
-                        }
-                    } while (endLoop);
+                    VehicleProperties();
                     Console.WriteLine("Enter the fueltype volume:");
                     fuelType = Console.ReadLine();
 
-                    garage.Add(new Boat(registrationNo, color, nOfWheels, fuelType));
+                    garage.Add(new Boat(RegistrationNumber, Color, NOfWheels, fuelType));
                 }
                 else if (Input == "3")
                 {
-                    Console.WriteLine("Enter the registration number:");
-                    registrationNo = Console.ReadLine();
-                    Console.WriteLine("Enter the color:");
-                    color = Console.ReadLine();
-                    Console.WriteLine("Enter the number of wheels:");
-                    do
-                    {
-                        bool input = int.TryParse(Console.ReadLine(), out nOfWheels);
-                        if (input == true)
-                        {
-                            endLoop = false;
-                        }
-                        else
-                        {
-                            Console.WriteLine("You should input the number numerically");
-                        }
-                    } while (endLoop);
+                    VehicleProperties();
                     Console.WriteLine("Enter the number of seats volume:");
                     do
                     {
@@ -177,28 +128,12 @@ namespace Garage
                             Console.WriteLine("You should input the number of seats numerically");
                         }
                     } while (endLoop2);
-                    garage.Add(new Bus(registrationNo, color, nOfWheels, noOfSeats));
+                    garage.Add(new Bus(RegistrationNumber, Color, NOfWheels, noOfSeats));
                 }
                 else if (Input == "4")
                 {
-                    Console.WriteLine("Enter the registration number:");
-                    registrationNo = Console.ReadLine();
-                    Console.WriteLine("Enter the color:");
-                    color = Console.ReadLine();
-                    Console.WriteLine("Enter the number of wheels:");
-                    do
-                    {
-                        bool input = int.TryParse(Console.ReadLine(), out nOfWheels);
-                        if (input == true)
-                        {
-                            endLoop = false;
-                        }
-                        else
-                        {
-                            Console.WriteLine("You should input the number numerically");
-                        }
-                    } while (endLoop);
-                    Console.WriteLine("Enter the length volume:");
+                    VehicleProperties();
+                    Console.WriteLine("Enter the length:");
                     do
                     {
                         bool input = int.TryParse(Console.ReadLine(), out length);
@@ -211,27 +146,11 @@ namespace Garage
                             Console.WriteLine("You should input the length number numerically");
                         }
                     } while (endLoop2);
-                    garage.Add(new Motorcycle(registrationNo, color, nOfWheels, length));
+                    garage.Add(new Motorcycle(RegistrationNumber, Color, NOfWheels, length));
                 }
                 else if (Input == "5")
                 {
-                    Console.WriteLine("Enter the registration number:");
-                    registrationNo = Console.ReadLine();
-                    Console.WriteLine("Enter the color:");
-                    color = Console.ReadLine();
-                    Console.WriteLine("Enter the number of wheels:");
-                    do
-                    {
-                        bool input = int.TryParse(Console.ReadLine(), out nOfWheels);
-                        if (input == true)
-                        {
-                            endLoop = false;
-                        }
-                        else
-                        {
-                            Console.WriteLine("You should input the number of engines numerically");
-                        }
-                    } while (endLoop);
+                    VehicleProperties();
                     Console.WriteLine("Enter the number of engines volume:");
                     do
                     {
@@ -245,10 +164,28 @@ namespace Garage
                             Console.WriteLine("You should input the number numerically");
                         }
                     } while (endLoop2);
-                    garage.Add(new Airplane(registrationNo, color, nOfWheels, numberOfengines));
+                    garage.Add(new Airplane(RegistrationNumber, Color, NOfWheels, numberOfengines));
                 }
-                //else if (Input == "6") ;
-                //REMOVE METHOD
+                else if (Input == "6")
+                {
+                    VehicleProperties();
+                    Console.WriteLine("Enter the number of engines volume:");
+                    do
+                    {
+                        bool input = int.TryParse(Console.ReadLine(), out padels);
+                        if (input == true)
+                        {
+                            endLoop2 = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You should input the number numerically");
+                        }
+                    } while (endLoop2);
+                    garage.Add(new Mopeds(RegistrationNumber, Color, NOfWheels, padels));
+                    
+                }
+                
                 else if (Input == "7")
                 {
                     for (int i = 0; i < Capacity; i++)
@@ -260,9 +197,12 @@ namespace Garage
                     Console.WriteLine("Press enter to go back");
                     Console.ReadLine();
                 }
+                //else if (Input == "8") ;
+                //REMOVE METHOD
                 else if (Input == "0")
 
                     Keeprunning = false;
+                
                 else
                     Console.WriteLine("Incorrect Input");
 
@@ -271,7 +211,35 @@ namespace Garage
             Console.ReadKey();
             
         }
-
+        public void VehicleProperties()
+        {
+            string registrationNo,color;
+            int nOfWheels;
+            bool endLoop = true;
+            Console.WriteLine("Enter the registration number:");
+            registrationNo = Console.ReadLine();
+            RegistrationNumber = registrationNo;
+            Console.WriteLine("Enter the color:");
+            color = Console.ReadLine();
+            Color = color;
+            Console.WriteLine("Enter the number of wheels:");
+            do
+            {
+                bool input = int.TryParse(Console.ReadLine(), out nOfWheels);
+                if (input == true)
+                {
+                    NOfWheels = nOfWheels;
+                    endLoop = false;
+                }
+                else
+                {
+                    Console.WriteLine("You should input the number numerically");
+                }
+            } while (endLoop);
+        }
+        private int NOfWheels { get; set; }
+        private string Color { get; set; }
+        private string RegistrationNumber { get; set; }
     }
                 //garageClass.Add(new Animal(23, "Trump", "Orange", 2, false));
 
