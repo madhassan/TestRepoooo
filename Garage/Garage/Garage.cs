@@ -9,7 +9,7 @@ namespace Garage
 {
     public class Garage<T> : IEnumerable<T> where T : Vehicle
     {
-        T[] vehicles;
+        public T[] vehicles;
 
         int cap, count;
         public Garage(int capacity)
@@ -18,6 +18,7 @@ namespace Garage
             count = 0;
             vehicles = new T[capacity];
         }
+        
 
         public void Add(T input)
         {
