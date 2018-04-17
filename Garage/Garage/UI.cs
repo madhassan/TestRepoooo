@@ -107,7 +107,7 @@ namespace Garage
                 else if (Input == "2")
                 {
                     VehicleProperties();
-                    Console.WriteLine("Enter the fueltype volume:");
+                    Console.WriteLine("Enter the fueltype:");
                     fuelType = Console.ReadLine();
 
                     garage.Add(new Boat(RegistrationNumber, Color, NOfWheels, fuelType));
@@ -115,7 +115,7 @@ namespace Garage
                 else if (Input == "3")
                 {
                     VehicleProperties();
-                    Console.WriteLine("Enter the number of seats volume:");
+                    Console.WriteLine("Enter the number of seats:");
                     do
                     {
                         bool input = int.TryParse(Console.ReadLine(), out noOfSeats);
@@ -151,7 +151,7 @@ namespace Garage
                 else if (Input == "5")
                 {
                     VehicleProperties();
-                    Console.WriteLine("Enter the number of engines volume:");
+                    Console.WriteLine("Enter the number of engines :");
                     do
                     {
                         bool input = int.TryParse(Console.ReadLine(), out numberOfengines);
@@ -169,7 +169,7 @@ namespace Garage
                 else if (Input == "6")
                 {
                     VehicleProperties();
-                    Console.WriteLine("Enter the number of engines volume:");
+                    Console.WriteLine("Enter the number of padels:");
                     do
                     {
                         bool input = int.TryParse(Console.ReadLine(), out padels);
@@ -197,8 +197,11 @@ namespace Garage
                     Console.WriteLine("Press enter to go back");
                     Console.ReadLine();
                 }
-                //else if (Input == "8") ;
-                //REMOVE METHOD
+                else if (Input == "8")
+                {
+                    Console.WriteLine("Enter the vehicle registration number to unpark it :");
+                    garage.Remove(RegistrationNumber = Console.ReadLine()) ;
+                }
                 else if (Input == "0")
 
                     Keeprunning = false;

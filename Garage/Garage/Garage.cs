@@ -19,6 +19,39 @@ namespace Garage
             vehicles = new T[capacity];
         }
         
+        public void Remove(string input)
+        {
+          
+           
+                for (int i = 0; i < vehicles.Count(); i++)
+                {
+                if (i== vehicles.Count()-1)
+                {
+                }
+                    
+                        
+                    else if (vehicles[i].RegistrationNumber == input)
+                    {
+                        vehicles[i] = null;
+                    for (int x = i; x < vehicles.Count(); x++)
+                    {
+
+                        if (x== vehicles.Count() -1)
+                        {
+                            vehicles[x] = null;
+                            count -= 1;
+                        }
+                        else 
+                        {
+                            vehicles[x] = vehicles[x + 1];
+
+                        }
+
+                    }
+                    }
+                }
+            
+        }
 
         public void Add(T input)
         {
