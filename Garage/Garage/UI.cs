@@ -199,6 +199,11 @@ namespace Garage
                     Console.WriteLine("Press enter to go back");
                     Console.ReadLine();
                 }
+                else if (Input == "8")
+                {
+                    Console.WriteLine("Enter the vehicle registration number to unpark it :");
+                    garage.Remove(RegistrationNumber = Console.ReadLine()) ;
+                }
 
                 else if (Input == "9")
                 {
