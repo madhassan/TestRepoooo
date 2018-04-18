@@ -210,8 +210,7 @@ namespace Garage
                     Console.WriteLine("Incorrect Input");
 
             }
-            Console.Write("\n<PRESS ANY BUTTON TO GO BACK>");
-            Console.ReadKey();
+           
             
         }
         public void VehicleProperties()
@@ -244,21 +243,7 @@ namespace Garage
         private string Color { get; set; }
         private string RegistrationNumber { get; set; }
     }
-                //garageClass.Add(new Animal(23, "Trump", "Orange", 2, false));
-
-                ///*
-                //foreach (var item in collection. Where (x=> x.Property))
-                //{
-
-                //}*/
-
-                //var filteredShelter = garageClass.Where(x => x.NrOfLegs > 2 || x.Species == "Orange").OrderBy(x => x.IsTame).OrderBy(x => x.Age).OrderBy(x => x.Name);
-
-                //foreach (var animal in filteredShelter)
-                //{
-                //    Console.WriteLine(animal.Name + "is " + animal.Age + " years old has " + animal.NrOfLegs + " legs, is a " + animal.Species + " and is tame = " + animal.IsTame);
-                //}
-
+             
             
         }
     
