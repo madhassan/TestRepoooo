@@ -186,8 +186,12 @@ namespace Garage
                     garage.Add(new Mopeds(RegistrationNumber, Color, NOfWheels, padels));
 
                 }
-            //else if (Input == "7") ;
-                //REMOVE METHOD
+                else if (Input == "7")
+                {
+                    Console.WriteLine("Enter the vehicle registration number to unpark it :");
+                    garage.Remove(RegistrationNumber = Console.ReadLine());
+                }
+
                 else if (Input == "8")
                 {
                     for (int i = 0; i < Capacity; i++)
@@ -199,12 +203,7 @@ namespace Garage
                     Console.WriteLine("Press enter to go back");
                     Console.ReadLine();
                 }
-                else if (Input == "8")
-                {
-                    Console.WriteLine("Enter the vehicle registration number to unpark it :");
-                    garage.Remove(RegistrationNumber = Console.ReadLine()) ;
-                }
-
+                
                 else if (Input == "9")
                 {
                     Console.WriteLine("Enter number for choice");
