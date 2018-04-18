@@ -78,7 +78,7 @@ namespace Garage
                 Console.WriteLine("6) Moped");
                 Console.WriteLine("7) Remove a vehicle");
                 Console.WriteLine("8) All parked vehicles");
-                Console.WriteLine("9) Search Vehicle on the basis of registration number");
+                Console.WriteLine("9) Search for a Vehicle/s");
                 Console.WriteLine("0) Quit");
 
                 string Input = Console.ReadLine();
@@ -207,20 +207,85 @@ namespace Garage
 
                 else if (Input == "9")
                 {
-                    Console.WriteLine("Enter the registration number of the vehicle you want to search");
-                    string UserInput = Console.ReadLine();
-
-                    for (int i = 0; i < garage.Count(); i++)
+                    Console.WriteLine("Enter number for choice");
+                    Console.WriteLine("1) Search by Registration number");
+                    Console.WriteLine("2) Search by Color");
+                    Console.WriteLine("3) Search by Number of wheels");
+                    string Input2 = Console.ReadLine();
+                    bool wrongInput = true;
+                    if (Input2 == "1")
                     {
-                        if (UserInput == garage.vehicles[i].RegistrationNumber)
+                        Console.WriteLine("Enter the registration number of the vehicle/s you want to search");
+                        string UserInput = Console.ReadLine();
+
+
+                        for (int i = 0; i < garage.Count(); i++)
                         {
-                            Console.WriteLine(garage.vehicles[i]);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Vehicle not found!");
+                            if (wrongInput = UserInput == garage.vehicles[i].RegistrationNumber)
+                            {
+                                Console.WriteLine(garage.vehicles[i]);
+                            }
+                            else if (wrongInput == false)
+                            {
+                                Console.WriteLine("Vehicle not found!");
+                            }
+
                         }
 
+                    }
+                    else if (Input2 == "2")
+                    {
+                        Console.WriteLine("Enter the color of the vehicle/s you want to search");
+                        string UserInput = Console.ReadLine();
+
+                        for (int i = 0; i < garage.Count(); i++)
+                        {
+                            if (wrongInput = UserInput == garage.vehicles[i].Color)
+                            {
+                                Console.WriteLine(garage.vehicles[i]);
+                            }
+                            else if (wrongInput == false)
+                            {
+                                Console.WriteLine("Vehicle not found!");
+                            }
+
+                        }
+                    }
+
+                    else if (Input2 == "3")
+                    {
+                        Console.WriteLine("Enter the number of wheels of all vehicle/s you want to search");
+                        int UserInput2;
+                        do
+                        {
+                            bool input = int.TryParse(Console.ReadLine(), out UserInput2);
+                            if (input == true)
+                            {
+                                endLoop2 = false;
+                            }
+                            else
+                            {
+                                Console.WriteLine("You should input the number numerically");
+                            }
+                        } while (endLoop2);
+
+                        for (int i = 0; i < garage.Count(); i++)
+                        {
+                            if (wrongInput = UserInput2 == garage.vehicles[i].NumberofWheels)
+                            {
+                                Console.WriteLine(garage.vehicles[i]);
+                            }
+                            else if (wrongInput == false)
+                            {
+                                Console.WriteLine("Vehicle not found!");
+                            }
+
+                        }
+                        
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong input!");
                     }
                     Console.WriteLine("Press any key to go back");
                     Console.ReadKey();
