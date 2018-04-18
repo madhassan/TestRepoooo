@@ -24,6 +24,12 @@ namespace Garage
            
                 for (int i = 0; i < vehicles.Count(); i++)
                 {
+                if (vehicles[i] == null)
+                {
+                    
+                }
+                   else
+                {
                     if (i == vehicles.Count() - 1 && vehicles[i].RegistrationNumber == input)
                     {
                         vehicles[i] = null;
@@ -46,6 +52,7 @@ namespace Garage
 
                             }
                         }
+                    }
                     }
                 }
            
