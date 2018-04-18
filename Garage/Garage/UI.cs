@@ -200,8 +200,8 @@ namespace Garage
                     }
 
 
-                    Console.WriteLine("Press enter to go back");
-                    Console.ReadLine();
+                    Console.WriteLine("Press any key to go back");
+                    Console.ReadKey();
                 }
                 
                 else if (Input == "9")
