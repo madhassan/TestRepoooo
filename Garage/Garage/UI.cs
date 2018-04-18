@@ -204,10 +204,11 @@ namespace Garage
                 }
                 else if (Input == "8")
                 {
-                    for (int i = 0; i < Capacity; i++)
+                    foreach (var vehicle in garage)
                     {
-                        Console.WriteLine(garage.vehicles[i]);   
+                        Console.WriteLine(vehicle);
                     }
+                  
                     if (garage.Count() == 0)
                     {
                         Console.WriteLine("Your garage is empty.");
@@ -230,15 +231,15 @@ namespace Garage
                         Console.WriteLine("Enter the registration number of the vehicle/s you want to search");
                         string UserInput = Console.ReadLine();
 
-
-                        for (int i = 0; i < garage.Count(); i++)
+                        foreach (var vehicle in garage)
                         {
-                            if (UserInput == garage.vehicles[i].RegistrationNumber)
+                            if (UserInput == vehicle.RegistrationNumber)
                             {
-                                Console.WriteLine(garage.vehicles[i]);
+                                Console.WriteLine(vehicle);
                                 wrongInput = false;
                             }
                         }
+                       
                         if (wrongInput == true)
                         {
                             Console.WriteLine("Vehicle not found!");
@@ -249,16 +250,16 @@ namespace Garage
                         Console.WriteLine("Enter the color of the vehicle/s you want to search");
                         string UserInput = Console.ReadLine();
 
-                        for (int i = 0; i < garage.Count(); i++)
+                        foreach (var vehicle in garage)
                         {
-                            if (UserInput.ToUpper() == garage.vehicles[i].Color.ToUpper())
+                            if (UserInput.ToUpper() == vehicle.Color.ToUpper())
                             {
-                                Console.WriteLine(garage.vehicles[i]);
+                                Console.WriteLine(vehicle);
                                 wrongInput = false;
                             }
 
-
-                        }
+                        } 
+                      
                         if (wrongInput == true)
                         {
                             Console.WriteLine("Vehicle not found!");
@@ -281,15 +282,15 @@ namespace Garage
                                 Console.WriteLine("You should input the number numerically");
                             }
                         } while (endLoop2);
-
-                        for (int i = 0; i < garage.Count(); i++)
+                        foreach (var vehicle in garage)
                         {
-                            if (UserInput2 == garage.vehicles[i].NumberofWheels)
+                            if (UserInput2 == vehicle.NumberofWheels)
                             {
-                                Console.WriteLine(garage.vehicles[i]);
+                                Console.WriteLine(vehicle);
                                 wrongInput = false;
                             }
                         }
+                        
                         if (wrongInput == true)
                         {
                             Console.WriteLine("Vehicle not found!");

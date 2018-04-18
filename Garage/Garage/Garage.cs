@@ -9,7 +9,7 @@ namespace Garage
 {
     public class Garage<T> : IEnumerable<T> where T : Vehicle
     {
-        public T[] vehicles;
+        private T[] vehicles;
 
         int cap, count;
         public Garage(int capacity)
