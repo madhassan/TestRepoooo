@@ -19,7 +19,7 @@ namespace Garage
                 Console.WriteLine("1) Start a new garage");
                 Console.WriteLine("0) Quit");
 
-                string Input = Console.ReadLine();                                  //ReadKey().KeyChar
+                string Input = Console.ReadLine();                                
 
                 switch (Input)
                 {
@@ -76,15 +76,16 @@ namespace Garage
                 Console.WriteLine("4) Motorcycle");
                 Console.WriteLine("5) Airplane");
                 Console.WriteLine("6) Moped");
-                Console.WriteLine("7) Check parked vehicles");
-                Console.WriteLine("8) Remove a vehicle");
+                Console.WriteLine("7) Remove a vehicle");
+                Console.WriteLine("8) All parked vehicles");
+                Console.WriteLine("9) Search Vehicle on the basis of registration number");
                 Console.WriteLine("0) Quit");
 
-                string Input = Console.ReadLine();  
-                    int length, noOfSeats, numberOfengines,padels;
-                     string fuelType;
-                     bool  endLoop2 = true;
-                     float cylinderVolume;
+                string Input = Console.ReadLine();
+                int length, noOfSeats, numberOfengines, padels;
+                string fuelType;
+                bool endLoop2 = true;
+                float cylinderVolume;
                 if (Input == "1")
                 {
                     VehicleProperties();
@@ -151,7 +152,7 @@ namespace Garage
                 else if (Input == "5")
                 {
                     VehicleProperties();
-                    Console.WriteLine("Enter the number of engines :");
+                    Console.WriteLine("Enter the number of engines:");
                     do
                     {
                         bool input = int.TryParse(Console.ReadLine(), out numberOfengines);
@@ -183,17 +184,18 @@ namespace Garage
                         }
                     } while (endLoop2);
                     garage.Add(new Mopeds(RegistrationNumber, Color, NOfWheels, padels));
-                    
+
                 }
-                
-                else if (Input == "7")
+            //else if (Input == "7") ;
+                //REMOVE METHOD
+                else if (Input == "8")
                 {
                     for (int i = 0; i < Capacity; i++)
                     {
                         Console.WriteLine(garage.vehicles[i]);
                     }
-                        
-                    
+
+
                     Console.WriteLine("Press enter to go back");
                     Console.ReadLine();
                 }
@@ -202,10 +204,32 @@ namespace Garage
                     Console.WriteLine("Enter the vehicle registration number to unpark it :");
                     garage.Remove(RegistrationNumber = Console.ReadLine()) ;
                 }
+
+                else if (Input == "9")
+                {
+                    Console.WriteLine("Enter the registration number of the vehicle you want to search");
+                    string UserInput = Console.ReadLine();
+
+                    for (int i = 0; i < garage.Count(); i++)
+                    {
+                        if (UserInput == garage.vehicles[i].RegistrationNumber)
+                        {
+                            Console.WriteLine(garage.vehicles[i]);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Vehicle not found!");
+                        }
+
+                    }
+                    Console.WriteLine("Press any key to go back");
+                    Console.ReadKey();
+                }
+
                 else if (Input == "0")
 
                     Keeprunning = false;
-                
+
                 else
                     Console.WriteLine("Incorrect Input");
 
@@ -213,6 +237,9 @@ namespace Garage
            
             
         }
+
+       
+
         public void VehicleProperties()
         {
             string registrationNo,color;
@@ -242,6 +269,7 @@ namespace Garage
         private int NOfWheels { get; set; }
         private string Color { get; set; }
         private string RegistrationNumber { get; set; }
+        
     }
              
             
