@@ -299,8 +299,7 @@ namespace Garage
                     Console.WriteLine("Incorrect Input");
 
             }
-            Console.Write("\n<PRESS ANY BUTTON TO GO BACK>");
-            Console.ReadKey();
+           
             
         }
 
