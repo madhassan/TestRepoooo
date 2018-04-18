@@ -206,9 +206,12 @@ namespace Garage
                 {
                     for (int i = 0; i < Capacity; i++)
                     {
-                        Console.WriteLine(garage.vehicles[i]);
+                        Console.WriteLine(garage.vehicles[i]);   
                     }
-
+                    if (garage.Count() == 0)
+                    {
+                        Console.WriteLine("Your garage is empty.");
+                    }
 
                     Console.WriteLine("Press any key to go back");
                     Console.ReadKey();
